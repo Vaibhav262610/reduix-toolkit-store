@@ -17,7 +17,7 @@ const Navbar = () => {
               <h1 className="cursor-pointer">Cart</h1>
             </NavLink>
 
-            <h1 className="cursor-pointer">Cart Items : {items.length}</h1>
+            <h1 className="text-red-500">Cart Items : {items.length}</h1>
           </div>
         </div>
       </div>
