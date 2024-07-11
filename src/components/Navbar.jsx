@@ -8,7 +8,7 @@ const Navbar = () => {
     <>
       <div className="flex p-3 justify-center bg-gray-700 text-white">
         <div className="flex items-center justify-around w-10/12">
-          <h1 className="uppercase font-extrabold text-2xl">REDux store</h1>
+          <h1 className="uppercase font-extrabold text-xl md:text-2xl">REDux store</h1>
           <div className="flex  gap-4">
             <NavLink to="/">
               <h1 className="cursor-pointer">Home</h1>
