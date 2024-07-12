@@ -6,17 +6,22 @@ const Cart = () => {
   const products = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
-
   const removeHandler = (productId) => {
-    dispatch(remove(productId))
-  }
+    dispatch(remove(productId));
+  };
 
   return (
     <>
-      <div className="flex flex-col items-center">
-        <div className="text-2xl mt-8 font-bold uppercase">
-          <h1>Your Cart</h1>
-        </div>
+      <div className="flex flex-col  items-center">
+        {products > 0 ? (
+          <div className="text-2xl mt-20 font-bold uppercase">
+            <h1>Your Cart</h1>
+          </div>
+        ) : (
+          <div className="text-2xl mt-20 font-bold uppercase">
+            <h1>Your Cart Is Empty</h1>
+          </div>
+        )}
         <div className="w-full flex-col items-center flex justify-center">
           {products.map((product) => {
             return (
@@ -39,6 +44,9 @@ const Cart = () => {
               </>
             );
           })}
+          <div>
+            <h1 className="text-3xl font-bold p-12">TOTAL AMOUNT : </h1>
+          </div>
         </div>
       </div>
     </>

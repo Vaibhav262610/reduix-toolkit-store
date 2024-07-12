@@ -6,7 +6,7 @@ const Navbar = () => {
   const items = useSelector((state) => state.cart);
   return (
     <>
-      <div className="flex  p-3 justify-center bg-gray-700 text-white">
+      <div className="flex fixed w-full  p-3 justify-center bg-gray-700 text-white">
         <div className="flex md:flex-row flex-col  items-center justify-around w-10/12">
           <h1 className="uppercase mt-4 md:mt-0 font-extrabold text-2xl">
             REDux store
