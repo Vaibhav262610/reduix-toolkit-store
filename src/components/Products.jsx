@@ -6,7 +6,6 @@ import { add } from "../store/cartSlice";
 const Products = () => {
   const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
-  const [toogle, setToggle] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -20,11 +19,6 @@ const Products = () => {
 
   const handleAdd = (product) => {
     dispatch(add(product));
-    setToggle(true);
-    console.log(toogle);
-    // setToggle(false);
-    // console.log(toogle);
-    // setToggle('CLICKED')
   };
 
   return (
@@ -41,7 +35,7 @@ const Products = () => {
                 <img src={product.image} width={100} height={100} alt="" />
                 <h1 className="">{product.title.slice(0, 20)}</h1>
                 {/* <div className="flex justify-around "> */}
-                <h1 className="text-green-600 text-xl">${product.price}</h1>
+                <h1 className="text-green-600 text-xl">{product.price}</h1>
                 <button
                   onClick={() => handleAdd(product)}
                   className="bg-indigo-400 px-4 py-2 rounded text-white "
@@ -56,15 +50,6 @@ const Products = () => {
             </>
           );
         })}
-        {toogle ? (
-          <div className="absolute text-2xl uppercase p-4 opacity-100 rounded font-bold bottom-12 bg-yellow-300">
-            <h1>YOUr item has been added to cart</h1>
-          </div>
-        ) : (
-          <div className="absolute text-2xl uppercase p-4 opacity-0 rounded font-bold bottom-12 bg-yellow-300">
-            <h1>YOUr item has been added to cart</h1>
-          </div>
-        )}
       </div>
     </>
   );
